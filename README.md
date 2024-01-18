@@ -1,9 +1,15 @@
-# isp-two-pointers
+# Independent Study Project - Two Pointer 
 independent study project researching two pointer algorithm
 
-# Independent Learning Project - Selection Sort
-
 ## Introduction
+
+uses
+- Searching pairs in a sorted array. [^1]
+[^1]: geekforgeeks.com
+- Find sets of data that fit a certain condition or criterion. [^2]
+[^2]: medium.com
+- Moving number to the end while keeping relative order. [^3]
+[^3]: opengenius.org 
 
 Selection sort is a simple sorting algorithm that works by dividing the input list into two parts: the sorted portion and the unsorted portion. The algorithm repeatedly selects the smallest (or largest, depending on the sorting order) element from the unsorted portion and swaps it with the first unsorted element. This process continues until the entire list is sorted.
 
@@ -80,10 +86,14 @@ Other sorting algorithms such as quick-sort and merge-sort have a time complexit
 
 ## Citations
 
-[Wikipedia - Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
+[GeekForGeeks - Javascript Program for Two Pointers Technique](https://www.geeksforgeeks.org/javascript-program-for-two-pointers-technique/)
 
-[GeekForGeeks - Selection Sort](https://www.geeksforgeeks.org/selection-sort/#)
+[Medium - The Two Pointer technique](https://medium.com/codex/the-two-pointer-technique-8c44b0b3890)
 
-[The gif to illustrate selection sort](https://s-satsangi.medium.com/insertion-sort-selection-sort-and-bubble-sort-5eb16d55a4de)
+[Basedash - The Two Pointer Technique in Javascript](https://www.basedash.com/blog/the-two-pointers-technique-in-javascript)
 
-[ChatGPT Link to chat](https://chat.openai.com/share/078ea7b9-c88d-4abb-a8d9-8878aac4640c)
+[Quora - What Exactly is the Two Pointer Method Solution?](https://www.quora.com/What-exactly-is-the-two-pointer-method-solution)
+
+[Tutorialspoint - JAvascript Program for Two Pointer Technique](https://www.tutorialspoint.com/javascript-program-for-two-pointers-technique)
+
+[Opengenius - Two Pointer Technique in Javascript](https://iq.opengenus.org/two-pointer-technique-in-javascript/)
