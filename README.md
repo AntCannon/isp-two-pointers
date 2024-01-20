@@ -167,6 +167,12 @@ Create three variables. Two outside the while loop `leftPointer` and `rightPoint
 [^3]: [opengenius.org](opengenius.org)
 - Extended List via chaptGPT. [^4]
 [^4]: [chatGPT Query](https://chat.openai.com/share/d2d3577a-0cda-42e7-940c-e674744335a4)
+- Two Sum Problems
+- Remove Duplicates from Sorted Array
+- Container With Most Water
+- Linked List Cycle Detection
+- Longest Substring Without Repeating Characters
+- Trapping Rain Water
 
 ## Edge Cases and Concerns
 
