@@ -1,5 +1,4 @@
-# Independent Study Project - Two Pointer 
-independent study project researching two pointer algorithm
+# Independent Study Project - Two Pointer
 
 ## Introduction
 
@@ -12,46 +11,50 @@ We are going to look at the Two Pointer Technique being used in a two sum proble
 
 ## Algorithm Description
 ### The Technique
-Instead of iterating through a sorted array twice using a nested loop to interact with different combinations of elements in array, we can use one iteration and two pointers.
+Instead of iterating through a sorted array twice using a nested loop to interact with different combinations of elements in array, which would use `i` and `j`, we can use one iteration and two pointers.
 
 ### The Problem
-Return the index of the elements whose sum is te target number. If none is found return null.
+Return the index of the elements whose sum is the target number. If none is found return null.
 
-1. Initialization: Start with a sorted array
+1. Sorted Array: Start with a sorted array
 
 ```js
 const sortedArr = [-10, -5, -3, 1, 2, 6, 8];
 ```
 
 2. Define function: Include parameters
-* @param {numbers[]} sArr - sorted array of numbers.
-* @param {number} target - the number we are looking for.
-* @return {numbers[]} indices - the indexes of the two numbers that satisfy the target condition 
 
 ```js
+/**
+ * @function twoSum
+ * search a sorted array for a pair of elements whose sum is the target and returns the indices. If no pairs are found return null.
+ * 
+ * @param {numbers[]} sArr - sorted array of numbers.
+ * @param {number} target - the number we are looking for.
+ * @return {numbers[]} indices - the indexes of the two numbers that satisfy the target condition
+ */
+
 function twoSum (sArr, target) {
 }
 ```
 
-3. Declare variables:
+3. Declare variables: Declare your pointers to start at the first and last indices of your sorted array.
 
 ```js
-  // will hold the two indices that satisfy the twoSum condition.
-  const satisfyingIndices = [];
-  // the leftPointer starts at the first index of the array.
+  // `leftPointer` starts at the beginning of the array.
   let leftPointer = 0;
-  // rightPointer starts at the end of the array.
+  // `rightPointer` starts at the end of the array.
   let rightPointer = sArr.length-1;
 ```
 
-4. Iterate: Iterate through the sorted array while the the left and right pointers are not the same.
+4. Iterate: Iterate through the sorted array while the the left and right pointers have not met.
 
 ```js
-  while (leftPointer < rightPointer) {
+  while (leftPointer !== rightPointer) {
   }
 ```
 
-5. Check: Use an if statement to check our three possible conditions when comparing our sum to the target.
+5. Check: Use an if statement to check our three possible conditions when comparing each iteration of `sum` to the `target`.
 
 - Check if the elements at the left and right pointer satisfy the condition in this case the sum.
 
@@ -60,7 +63,7 @@ function twoSum (sArr, target) {
     const sum = sArr[leftPointer] + sArr[rightPointer];
     // check if sum is equal to the target.
     if (sum === target) {
-      // if true then return out of the function
+      // if true then return `leftPointer` and `rightPointer` as elements in a array.
       return [leftPointer, rightPointer]
     }
 ```
@@ -70,7 +73,7 @@ function twoSum (sArr, target) {
 ```js
     // check if sum is less that target
     } else if (sum < target) {
-      // if true then increment leftPointer. The only way to mak the sum get closer to target is to try a larger number. Since the array is sorted the only way to get the next largest combination is to increment the leftPointer.
+      // if true then increment `leftPointer`. The only way to mak the sum get closer to target is to try a larger number. Since the array is sorted the only way to get the next largest combination is to increment the `leftPointer`.
       leftPointer++;
     }
 ```
@@ -80,15 +83,18 @@ function twoSum (sArr, target) {
 ```js
     // the only other conditions, sum equal to target and sum less than target, were tested already so we use an else to catch sum more than target.
     } else {
-      // If sum is more than target the only way to make sum smaller is to make it smaller. Since the array is sorted the only way to make sum smaller is to move the rightPointer inward by decrementing it to get the next smaller element.
+      // If sum is more than target the only way to make sum smaller is to make it smaller. Since the array is sorted, the only way to make sum smaller is to move the `rightPointer` inward by decrementing it to get the next smaller element.
       rightPointer--;
     }
+  } // close the while loop
 ```
 
-6. Repeat: repeat until the condition is met. If the condition is not met then the return statement in the loop will never trigger. Therefore the return statement at the end of the function will trigger.
+6. Repeat: Repeat until the condition is met. If the condition is not met then the return statement in the loop will never trigger. Therefore the return statement at the end of the function will trigger.
 
 ```js
+  } // close the while loop
   return null;
+} // close the function
 ```
 
 ## Full Function
@@ -164,8 +170,6 @@ Create three variables. Two outside the while loop `leftPointer` and `rightPoint
 
 ## Edge Cases and Concerns
 
-As mentioned above, the algorithm is not very efficient so the edge cases and concerns would be for large data inputs.
-Other sorting algorithms such as quick-sort and merge-sort have a time complexity of O(n\*log(n)) which are way more efficient.
 
 ## Citations
 

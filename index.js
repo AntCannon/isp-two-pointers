@@ -1,3 +1,4 @@
+const sortedArr = [-10, -5, -3, 1, 2, 6, 8];
 
 function twoSum (sArr, target) {
     let leftPointer = 0;
@@ -17,3 +18,5 @@ function twoSum (sArr, target) {
   
     return null
   }
+
+  console.log(twoSum(sortedArr, -15));
