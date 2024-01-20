@@ -9,46 +9,118 @@ uses
 - Find sets of data that fit a certain condition or criterion. [^2]
 [^2]: medium.com
 - Moving number to the end while keeping relative order. [^3]
-[^3]: opengenius.org 
+[^3]: opengenius.org
 
-Selection sort is a simple sorting algorithm that works by dividing the input list into two parts: the sorted portion and the unsorted portion. The algorithm repeatedly selects the smallest (or largest, depending on the sorting order) element from the unsorted portion and swaps it with the first unsorted element. This process continues until the entire list is sorted.
+The Two pointer algorithm or technique is used in a loop mostly used to search for combinations of elements in a sorted array or compare the the items in a sorted array with each other or something else.
+
+In the two pointer method the two pointers cam move from the outside in one being a left pointer and one being the right pointer, or the pointer can start from the same place and move the same direction with one being a slow pointer and the other being a fast pointer.
+
+We are going to look at the Two Pointer Technique being used in a two sum problem. Some select uses are named, but not explored, in the Use Case section.
+
 
 ## Algorithm Description
+### The Technique
+Instead of iterating through a sorted array twice using a nested loop to interact with different combinations of elements in array, we can use one iteration and two pointers.
 
-1. Initialization: The entire list is considered unsorted initially.
+### The Problem
+Return the index of the elements whose sum is te target number. If none is found return null.
+
+1. Initialization: Start with a sorted array
 
 ```js
-const array = [5, 2, 4, 1, 3];
+const sortedArr = [-10, -5, -3, 1, 2, 6, 8];
 ```
 
-2. Iterate over the array, element by element. For each element in the array, iterate over the entire array to find the element with the minimum value on the right side of the array, the unsorted side.
+2. Define function: Include parameters
+* @param {numbers[]} sArr - sorted array of numbers.
+* @param {number} target - the number we are looking for.
+* @return {numbers[]} indices - the indexes of the two numbers that satisfy the target condition 
 
 ```js
-for (let i = 0; i < array.length; i++) {
-  // Any elements in an index greater than i are considered in the unsorted part of the array
-  let minIndex = i; // initialize min to the current element
-  for (let j = i + 1; j < array.length; j++) {
-    // iterate over the unsorted side of the array
-    minIndex = array[minIndex] > array[j] ? j : minIndex; // Find the min element's index in the unsorted side of the array
-  }
+function twoSum (sArr, target) {
 }
 ```
 
-3. Swap: Swap the minimum element with the first element in the unsorted portion.
+3. Declare variables:
 
 ```js
-[array[minIndex], array[i]] = [array[i], array[minIndex]]; // swap the element at index i with the min element
+  // will hold the two indices that satisfy the twoSum condition.
+  const satisfyingIndices = [];
+  // the leftPointer starts at the first index of the array.
+  let leftPointer = 0;
+  // rightPointer starts at the end of the array.
+  let rightPointer = sArr.length-1;
 ```
 
-4. Expansion of Sorted Portion: Move the boundary between the sorted and unsorted portions one position to the right.
+3. Iterate: Iterate through the sorted array while the the left and right pointers are not the same.
 
 ```js
-// This step is already taken care of in the external for loop
+  while (leftPointer < rightPointer) {
+  }
 ```
 
-5. Repeat: Repeat steps 2-4 until the entire list is sorted and return the input array that was sorted in-place
+4. Check: Use an if statement to check our three possible conditions when comparing our sum to the target.
 
-![Selection Sort Animation](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5WXRN62ddiM_Gcf4GDdCZg.gif)
+- Check if the elements at the left and right pointer satisfy the condition in this case the sum.
+
+```js
+    // calculate the sum of the elements at the pointers.
+    const sum = sArr[leftPointer] + sArr[rightPointer];
+    // check if sum is equal to the target.
+    if (sum === target) {
+      // if true then return out of the function
+      return [leftPointer, rightPointer]
+    }
+```
+
+-  Sum is less than: If the sum is not equal to the target it is either bigger than or less than the target. So we continue the if statement, using else if to check the less than condition.
+
+```js
+    // check if sum is less that target
+    } else if (sum < target) {
+      // if true then increment leftPointer. The only way to mak the sum get closer to target is to try a larger number. Since the array is sorted the only way to get the next largest combination is to increment the leftPointer.
+      leftPointer++;
+    }
+```
+
+- Sum is more than target: If the sum is not equal to or less than the sum it must be greater. close the if statement with else.
+
+```js
+    // the only other conditions, sum equal to target and sum less than target, were tested already so we use an else to catch sum more than target.
+    } else {
+      // If sum is more than target the only way to make sum smaller is to make it smaller. Since the array is sorted the only way to make sum smaller is to move the rightPointer inward by decrementing it to get the next smaller element.
+      rightPointer--;
+    }
+```
+
+5. Repeat: repeat until the condition is met. If the condition is not met then the return statement in the loop will never trigger. Therefor the return statement at the end of the function will trigger.
+
+```js
+  return null;
+```
+
+## Full Function
+
+```js
+function twoSum (sArr, target) {
+  let leftPointer = 0;
+  let rightPointer = sArr.length-1;
+
+  while (leftPointer < rightPointer) {
+    const sum = sArr[leftPointer] + sArr[rightPointer];
+
+    if (sum === target) {
+      return [leftPointer, rightPointer];
+    }
+  } else if (sum < target) {
+    leftPointer++;
+  } else {
+    rightPointer--;
+  }
+  
+  return null
+}
+```
 
 ## Big O Evaluation
 
