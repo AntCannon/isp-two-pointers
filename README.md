@@ -52,14 +52,14 @@ function twoSum (sArr, target) {
   let rightPointer = sArr.length-1;
 ```
 
-3. Iterate: Iterate through the sorted array while the the left and right pointers are not the same.
+4. Iterate: Iterate through the sorted array while the the left and right pointers are not the same.
 
 ```js
   while (leftPointer < rightPointer) {
   }
 ```
 
-4. Check: Use an if statement to check our three possible conditions when comparing our sum to the target.
+5. Check: Use an if statement to check our three possible conditions when comparing our sum to the target.
 
 - Check if the elements at the left and right pointer satisfy the condition in this case the sum.
 
@@ -93,7 +93,7 @@ function twoSum (sArr, target) {
     }
 ```
 
-5. Repeat: repeat until the condition is met. If the condition is not met then the return statement in the loop will never trigger. Therefor the return statement at the end of the function will trigger.
+6. Repeat: repeat until the condition is met. If the condition is not met then the return statement in the loop will never trigger. Therefore the return statement at the end of the function will trigger.
 
 ```js
   return null;
@@ -111,13 +111,13 @@ function twoSum (sArr, target) {
 
     if (sum === target) {
       return [leftPointer, rightPointer];
-    }
-  } else if (sum < target) {
+    } else if (sum < target) {
     leftPointer++;
-  } else {
+    } else {
     rightPointer--;
+    }
   }
-  
+
   return null
 }
 ```
@@ -126,26 +126,38 @@ function twoSum (sArr, target) {
 
 ### Time Complexity
 
-If the array's length is `n`, and for each element in the array we iterate over the entire unsorted part of the array to find the minimum element, than every time we iterate over an array of `n - 1` length compared to the previous iteration. That, in the worst case would be `O(n^2)` because even though the unsorted portion is shrinking, the number of comparisons is still proportional to the square of the size of the input
+If the array's length is `n`, and for each element in the array we iterate over the sorted array from both ends by incrementing `leftPointer` or decrementing `rightPointer` after checking if elements satisfy the condition. The worst case is going through the entire array `O(n)`.
 
 ```js
-for (let i = 0; i < array.length; i++) {
-  // a for loop over the entire length of the array --> n
-  let minIndex = i; // creating a variable --> 1
-  for (let j = i + 1; j < array.length; j++) {
-    // nested for loop over the unsorted side of the array --> n - 1
-    minIndex = array[minIndex] > array[j] ? j : minIndex; // comparing each element with the next --> 2n - 2
+function twoSum (sArr, target) {
+  let leftPointer = 0;
+  // SC creating a variable --> 1
+  let rightPointer = sArr.length-1;
+  // SC creating a variable --> 1
+  while (leftPointer < rightPointer) {
+  // TC while loop over the entire length of the array until leftPointer and rightPointer meet --> n
+    const sum = sArr[leftPointer] + sArr[rightPointer];
+    // TC - 1 operation
+    // SC - create one variable
+
+    if (sum === target) { // TC 1 operation
+      return [leftPointer, rightPointer];
+    } else if (sum < target) { // TC 1 operation
+    leftPointer++; // TC 1 operation
+    } else {
+    rightPointer--; // TC 1 operation
+    }
+    // TC worst case 2 checks happen.
   }
-  [array[minIndex], array[i]] = [array[i], array[minIndex]]; // swapping outside the nested loop --> n
 }
 
-// (n + 1) * (3n - 3) + n --> 3n^2 - 3n + 3n - 4
-// Dropping the constants and linear expressions --> O(n^2)
+// 1 + (1 + n + 2) --> 1 + (n+3)
+// Dropping the constants and linear expressions --> O(n)
 ```
 
 ### Space Complexity
 
-We're only creating one variable for the `minIndex` which makes the space complexity highly the highly efficient --> O(1)
+Create three variables. Two outside the while loop `leftPointer` and `rightPointer` and one inside `sum`  --> `O(2 + 1)` --> `O(3)`.
 
 ## Use Cases
 
