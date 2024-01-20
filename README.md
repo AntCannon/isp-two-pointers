@@ -3,14 +3,6 @@ independent study project researching two pointer algorithm
 
 ## Introduction
 
-uses
-- Searching pairs in a sorted array. [^1]
-[^1]: geekforgeeks.com
-- Find sets of data that fit a certain condition or criterion. [^2]
-[^2]: medium.com
-- Moving number to the end while keeping relative order. [^3]
-[^3]: opengenius.org
-
 The Two pointer algorithm or technique is used in a loop mostly used to search for combinations of elements in a sorted array or compare the the items in a sorted array with each other or something else.
 
 In the two pointer method the two pointers cam move from the outside in one being a left pointer and one being the right pointer, or the pointer can start from the same place and move the same direction with one being a slow pointer and the other being a fast pointer.
@@ -161,7 +153,14 @@ Create three variables. Two outside the while loop `leftPointer` and `rightPoint
 
 ## Use Cases
 
-Because selection sort is not very efficient it's good for small data sizes, and as an intro for sorting algorithms for beginner coders
+- Searching pairs in a sorted array. [^1]
+[^1]: [geekforgeeks.com](geekforgeeks.com)
+- Find sets of data that fit a certain condition or criterion. [^2]
+[^2]: [medium.com](medium.com)
+- Moving number to the end while keeping relative order. [^3]
+[^3]: [opengenius.org](opengenius.org)
+- Extended List via chaptGPT. [^4]
+[^4]: [chatGPT Query](https://chat.openai.com/share/d2d3577a-0cda-42e7-940c-e674744335a4)
 
 ## Edge Cases and Concerns
 
@@ -181,3 +180,4 @@ Other sorting algorithms such as quick-sort and merge-sort have a time complexit
 [Tutorialspoint - JAvascript Program for Two Pointer Technique](https://www.tutorialspoint.com/javascript-program-for-two-pointers-technique)
 
 [Opengenius - Two Pointer Technique in Javascript](https://iq.opengenus.org/two-pointer-technique-in-javascript/)
+[ChatGPT Chat - Optimizing JavaScript: Two Pointers](https://chat.openai.com/share/d2d3577a-0cda-42e7-940c-e674744335a4)
