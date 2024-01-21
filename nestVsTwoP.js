@@ -35,7 +35,9 @@ function twoSumTP(sArr, target) {
   return 'TP NO SATISFACTORY PAIRS'
   }
 
+
 // ------------------- 1K
+
 
 // // nested loop VS. two pointer test case: 1K
 // // arr data
@@ -57,7 +59,9 @@ function twoSumTP(sArr, target) {
 // console.log(`TP finish:`, finish = Date.now());
 // console.log(`TP arr runtime:`, finish - start, '\n');
 
+
 // // ------------------- 10K
+
 
 // // nested loop VS. two pointer test case: 10K
 // // arr data
