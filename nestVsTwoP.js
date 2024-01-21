@@ -102,14 +102,12 @@ console.log(`\narr100K data`,
 
 // Nested loop run time
 const target100K = 999_922; //  lowest: ~30 mid: ~500_000 highest: ~999_980
-console.log(`target100K`, target100K)
-console.log(`NL start:`, start = Date.now());
+console.log(`target100K`, target100K);
+console.time('NL arr100K');
 console.log(twoSumNL(gen.arr100K, target100K));
-console.log(`NL finish:`, finish = Date.now());
-console.log(`NL arr runtime:`, finish - start, '\n');
+console.timeEnd('NL arr100K');
 
 // Two pointer run time
-console.log(`TP start:`, start = Date.now());
+console.time('TP arr100K');
 console.log(twoSumTP(gen.arr100K, target100K));
-console.log(`TP finish:`, finish = Date.now());
-console.log(`TP arr runtime:`, finish - start, '\n');
+console.timeEnd('TP arr100K');
