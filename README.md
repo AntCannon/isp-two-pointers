@@ -120,6 +120,57 @@ function twoSum (sArr, target) {
 }
 ```
 
+## Code Comparison
+<table>
+<tr>
+<th>Nested Loop Solution</th>
+<th>Two Point Solution</th>
+</tr>
+<tr>
+<td>
+  
+```js
+function twoSumNL(sArr, target) {
+  for (let i = 0; i < sArr.length-1; i++) {
+    for (let j = i + 1; j < sArr.length; j++) {
+      const sum = sArr[i] + sArr[j];
+      if (sum === target) {
+        return [[i, j]];
+      }
+    }
+  }
+  return 'NL NO SATISFACTORY PAIRS';
+}
+```
+  
+</td>
+<td>
+
+```js
+function twoSumTP(sArr, target) {
+  let leftPointer = 0;
+  let rightPointer = sArr.length-1;
+  
+  while (leftPointer < rightPointer) {
+    const sum = sArr[leftPointer] + sArr[rightPointer];
+  
+    if (sum === target) {
+    return [leftPointer, rightPointer];
+    } else if (sum < target) {
+    leftPointer++;
+    } else {
+    rightPointer--;
+    }
+  }
+  
+  return 'TP NO SATISFACTORY PAIRS'
+  }
+```
+
+</td>
+</tr>
+</table>
+
 ## Big O Evaluation
 
 ### Time Complexity
