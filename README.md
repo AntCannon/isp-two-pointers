@@ -1,13 +1,16 @@
-# Independent Study Project - Two Pointer
+# Independent Study Project - Two Pointer Algorithm
 
 ## Introduction
 
-The Two pointer algorithm or technique is used in a loop mostly used to search for combinations of elements in a sorted array or compare the the items in a sorted array with each other or something else.
+The two pointer algorithm or technique is used in a loop mostly used to search for combinations of elements in a sorted array or compare the the items in a sorted array with each other or something else.
 
-In the two pointer method the two pointers cam move from the outside in one being a left pointer and one being the right pointer, or the pointer can start from the same place and move the same direction with one being a slow pointer and the other being a fast pointer.
+There are three main approaches when using the two pointer technique: [^5]
+[^5]: [medium.com](https://medium.com/@altanner/two-pointer-technique-and-arrays-985f740f00be)
+- Left/Right: where the two pointers move from the outside-in, one being a left pointer and one being the right pointer
+- Fast/Slow: where the pointers start from the same place and move the same direction with one being a slow moving pointer and the other being a fast moving pointer.
+- Two Sequence: where each pointer represents the current position of a sequence.
 
-We are going to look at the Two Pointer Technique being used in a two sum problem. Some select uses are named, but not explored, in the Use Case section.
-
+We are going to focus on the Left/Right approach of the two pointer technique to solve a two sum problem. Some select uses are named, but not explored, you can view them in the Use Case section.
 
 ## Algorithm Description
 ### The Technique
@@ -15,6 +18,20 @@ Instead of iterating through a sorted array twice using a nested loop to interac
 
 ### The Problem
 Return the index of the elements whose sum is the target number. If none is found return null.
+
+### Function Syntax
+| Syntax Section                                  | Code                                            |
+|-------------------------------------------------|-------------------------------------------------|
+|Declare function                                 |function functionName(sortedArr, target) {       |
+|Create pointers                                  |let left = \<left end of the array>;             |
+|Create pointers                                  |let right = \<right end of the array>;           |
+|While loop                                       |while (\<two pointers did not meet>) {           |
+|Sum elements at pointers                         |const sum = arr[left] + arr[right]               |
+|If statement, sum equals target                  |  if (sum === target) { return \<desired return> |
+|Else if, sum less than target                    | else if (sum < target) { left++                 |
+|Else, cath all, last case is sum more than target| else { right--                                  |
+|Close curlies and return null if number not found|
+
 
 1. Sorted Array: Start with a sorted array
 
@@ -190,4 +207,7 @@ Create three variables. Two outside the while loop `leftPointer` and `rightPoint
 [Tutorialspoint - JAvascript Program for Two Pointer Technique](https://www.tutorialspoint.com/javascript-program-for-two-pointers-technique)
 
 [Opengenius - Two Pointer Technique in Javascript](https://iq.opengenus.org/two-pointer-technique-in-javascript/)
+
 [ChatGPT Chat - Optimizing JavaScript: Two Pointers](https://chat.openai.com/share/d2d3577a-0cda-42e7-940c-e674744335a4)
+
+[medium.com - Two Pointer Technique and Arrays, Part 1](https://medium.com/@altanner/two-pointer-technique-and-arrays-985f740f00be)
