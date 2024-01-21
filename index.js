@@ -1,3 +1,7 @@
+const gen = require('./genArr.js');
+
+console.log(`export test`,gen.arrTest);
+
 const sortedArr = [-10, -5, -3, 1, 2, 6, 8];
 
 function twoSum (sArr, target) {
