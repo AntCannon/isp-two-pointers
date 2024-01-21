@@ -141,7 +141,7 @@ function twoSumNL(sArr, target) {
       }
     }
   }
-  
+
   return 'NL NO SATISFACTORY PAIRS';
 }
 ```
@@ -158,13 +158,13 @@ function twoSumTP(sArr, target) {
     const sum = sArr[leftPointer] + sArr[rightPointer];
   
     if (sum === target) {
-    return [leftPointer, rightPointer];
-    } else if (sum < target) {
-    leftPointer++;
-    } else {
-    rightPointer--;
+      return [leftPointer, rightPointer];
+      } else if (sum < target) {
+      leftPointer++;
+      } else {
+      rightPointer--;
+      }
     }
-  }
   
   return 'TP NO SATISFACTORY PAIRS'
   }
