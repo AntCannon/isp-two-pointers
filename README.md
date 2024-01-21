@@ -132,13 +132,16 @@ function twoSum (sArr, target) {
 ```js
 function twoSumNL(sArr, target) {
   for (let i = 0; i < sArr.length-1; i++) {
+    
     for (let j = i + 1; j < sArr.length; j++) {
       const sum = sArr[i] + sArr[j];
+      
       if (sum === target) {
-        return [[i, j]];
+        return [i, j];
       }
     }
   }
+  
   return 'NL NO SATISFACTORY PAIRS';
 }
 ```
