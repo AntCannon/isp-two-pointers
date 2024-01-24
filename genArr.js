@@ -22,8 +22,8 @@ console.log(`gen arrays start:`, start = Date.now());
 // const arr100 = genSortedUniqueArr(100);
 // const arr1K = genSortedUniqueArr(1_000);
 // const arr10K = genSortedUniqueArr(10_000);
-const arr100K = genSortedUniqueArr(100_000);
-// const arr1M = genSortedUniqueArr(1_000_000);
+// const arr100K = genSortedUniqueArr(100_000);
+const arr1M = genSortedUniqueArr(1_000_000);
 // const arr10M = genSortedUniqueArr(10_000_000);
 // const arr100M = genSortedUniqueArr(100_000_000);
   
@@ -38,8 +38,8 @@ module.exports = {
   // arr100: arr100,
   // arr1K: arr1K,
   // arr10K: arr10K,
-  arr100K: arr100K,
-  // arr1M: arr1M,
+  // arr100K: arr100K,
+  arr1M: arr1M,
   // arr10M: arr10M,
   // arr100M: arr100M,
 }

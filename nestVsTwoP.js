@@ -89,25 +89,58 @@ function twoSumTP(sArr, target) {
 // ------------------- 100K
 
 
+// // nested loop VS. two pointer test case: 100K
+// // arr data
+// console.log(`\narr100K data`,
+// `\nlength:`, gen.arr100K.length,
+// `\nmin:`, gen.arr100K[0],
+// `\nmid`, gen.arr100K[Math.floor((gen.arr100K.length-1)/2)],
+// `\nmax`, gen.arr100K[gen.arr100K.length-1],
+// `\nmin sum:`, gen.arr100K[0] + gen.arr100K[1],
+// `\nmax sum:`, gen.arr100K[gen.arr100K.length-2]+ gen.arr100K[gen.arr100K.length-1],'\n');
+// // console.log(gen.arr10K);
+
+// // Nested loop run time
+// const target100K = 999_922; //  lowest: ~30 mid: ~500_000 highest: ~999_980
+// console.log(`target100K`, target100K);
+// console.time('NL arr100K');
+// console.log(twoSumNL(gen.arr100K, target100K));
+// console.timeEnd('NL arr100K');
+
+// // Two pointer run time
+// console.time('TP arr100K');
+// console.log(twoSumTP(gen.arr100K, target100K));
+// console.timeEnd('TP arr100K');
+
+
+// ------------------- 1M
+
+
 // nested loop VS. two pointer test case: 100K
 // arr data
-console.log(`\narr100K data`,
-`\nlength:`, gen.arr100K.length,
-`\nmin:`, gen.arr100K[0],
-`\nmid`, gen.arr100K[Math.floor((gen.arr100K.length-1)/2)],
-`\nmax`, gen.arr100K[gen.arr100K.length-1],
-`\nmin sum:`, gen.arr100K[0] + gen.arr100K[1],
-`\nmax sum:`, gen.arr100K[gen.arr100K.length-2]+ gen.arr100K[gen.arr100K.length-1],'\n');
+
+const arrToTest = gen.arr1M;
+console.log(arrToTest);
+const arrLabel = 'arr1M';
+ 
+
+console.log(`\n${arrLabel} data`,
+`\nlength:`, arrToTest.length,
+`\nmin:`, arrToTest[0],
+`\nmid`, arrToTest[Math.floor((arrToTest.length-1)/2)],
+`\nmax`, arrToTest[arrToTest.length-1],
+`\nmin sum:`, arrToTest[0] + arrToTest[1],
+`\nmax sum:`, arrToTest[arrToTest.length-2]+ arrToTest[arrToTest.length-1],'\n');
 // console.log(gen.arr10K);
 
 // Nested loop run time
-const target100K = 999_922; //  lowest: ~30 mid: ~500_000 highest: ~999_980
-console.log(`target100K`, target100K);
-console.time('NL arr100K');
-console.log(twoSumNL(gen.arr100K, target100K));
-console.timeEnd('NL arr100K');
+const targetToTest = 999_922; //  lowest: ~30 mid: ~500_000 highest: ~999_980
+console.log(`targetToTest`, targetToTest);
+console.time('NL ${arrLabel}');
+console.log(twoSumNL(arrToTest, targetToTest));
+console.timeEnd('NL ${arrLabel}');
 
 // Two pointer run time
-console.time('TP arr100K');
-console.log(twoSumTP(gen.arr100K, target100K));
-console.timeEnd('TP arr100K');
+console.time('TP ${arrLabel}');
+console.log(twoSumTP(arrToTest, targetToTest));
+console.timeEnd('TP ${arrLabel}');
