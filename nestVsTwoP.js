@@ -36,6 +36,12 @@ function twoSumTP(sArr, target) {
   return 'TP NO SATISFACTORY PAIRS'
 }
 
+// Function target generator
+// generates a target to test for based on what you want to test.
+//  best - generates a target near the beginning of the sorted array target < 5%
+//  mid - generates a target near the middle of the sorted array 47% < target <  53%
+//  worst - generates a target near the end of the sorted array 95% > target
+
 // runtime comparison test
 
 const arrToTest = gen.arr10K;
