@@ -136,14 +136,14 @@ console.log(`\n${arrLabel} data`,
 // Nested loop run time
 const targetToTest = 99_900; //  lowest: ~30 mid: ~500_000 highest: ~999_980
 console.log(`targetToTest`, targetToTest);
-console.log(`${'-'.repeat(50)}\nTESTING ${arrLabel} Nested Loop Run Time\n${'-'.repeat(50)}`);
+console.log(`\n${'-'.repeat(50)}\n${arrLabel} Nested Loop Run Time\n${'-'.repeat(50)}`);
 
 console.time(`NL ${arrLabel}`);
 console.log(twoSumNL(arrToTest, targetToTest));
 console.timeEnd(`NL ${arrLabel}`);
 
 // Two pointer run time
-console.log(`${'-'.repeat(50)}\nTESTING ${arrLabel} Two Pointer Runtime\n${'-'.repeat(50)}`);
+console.log(`\n${'-'.repeat(50)}\n${arrLabel} Two Pointer Runtime\n${'-'.repeat(50)}`);
 
 console.time(`TP ${arrLabel}`);
 console.log(twoSumTP(arrToTest, targetToTest));
