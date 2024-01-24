@@ -15,6 +15,8 @@ function twoSumNL(sArr, target) {
   return 'NL NO SATISFACTORY PAIRS';
 }
 
+
+// two pointer sum finder
 function twoSumTP(sArr, target) {
   let leftPointer = 0;
   let rightPointer = sArr.length-1;
@@ -32,13 +34,15 @@ function twoSumTP(sArr, target) {
   }
   
   return 'TP NO SATISFACTORY PAIRS'
-  }
+}
+
+// runtime comparison test
 
 const arrToTest = gen.arr10K;
 const arrLabel = 'arr10K';
 console.log(`${'-'.repeat(50)}\nTESTING ${arrLabel}\n${'-'.repeat(50)}`);
- 
 
+// information about the tested arr
 console.log(`\n${arrLabel} data`,
 `\nlength:`, arrToTest.length,
 `\nmin:`, arrToTest[0],
@@ -46,7 +50,6 @@ console.log(`\n${arrLabel} data`,
 `\nmax`, arrToTest[arrToTest.length-1],
 `\nmin sum:`, arrToTest[0] + arrToTest[1],
 `\nmax sum:`, arrToTest[arrToTest.length-2]+ arrToTest[arrToTest.length-1],'\n');
-// console.log(gen.arr10K);
 
 // Nested loop run time
 const targetToTest = 99_900; //  lowest: ~30 mid: ~500_000 highest: ~999_980
@@ -55,7 +58,7 @@ console.log(`\n${'-'.repeat(50)}\n${arrLabel} Nested Loop Run Time\n${'-'.repeat
 
 console.time(`NL ${arrLabel}`);
 console.log(twoSumNL(arrToTest, targetToTest));
-console.timeEnd(`NL ${arrLabel}`);
+const nlTime = console.timeEnd(`NL ${arrLabel}`);
 
 // Two pointer run time
 console.log(`\n${'-'.repeat(50)}\n${arrLabel} Two Pointer Runtime\n${'-'.repeat(50)}`);
@@ -63,3 +66,5 @@ console.log(`\n${'-'.repeat(50)}\n${arrLabel} Two Pointer Runtime\n${'-'.repeat(
 console.time(`TP ${arrLabel}`);
 console.log(twoSumTP(arrToTest, targetToTest));
 console.timeEnd(`TP ${arrLabel}`);
+
+console.log(nlTime);
