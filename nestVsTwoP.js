@@ -10,7 +10,7 @@ function twoSumNL(sArr, target) {
   for (let i = 0; i < sArr.length-1; i++) {
     for (let j = i + 1; j < sArr.length; j++) {
       const sum = sArr[i] + sArr[j];
-      if (sum === target) return ['indices:',[i, j], 'items:',[sArr[i], sArr[j]]];
+      if (sum === target) return `indices: ${i, j}, items: ${sArr[i], sArr[j]}`;
     }
   }
   return 'NL NO SATISFACTORY PAIRS';
@@ -24,7 +24,7 @@ function twoSumTP(sArr, target) {
     const sum = sArr[leftPointer] + sArr[rightPointer];
   
     if (sum === target) {
-    return ['indices:', [leftPointer, rightPointer], 'items:',[sArr[leftPointer], sArr[rightPointer]]];
+    return `indices: ${leftPointer, rightPointer}, items: ${sArr[leftPointer], sArr[rightPointer]}`;
     } else if (sum < target) {
     leftPointer++;
     } else {
@@ -119,9 +119,9 @@ function twoSumTP(sArr, target) {
 // nested loop VS. two pointer test case: 100K
 // arr data
 
-const arrToTest = gen.arr1M;
-// console.log(arrToTest);
-const arrLabel = 'arr1M';
+const arrToTest = gen.arr10K;
+const arrLabel = 'arr10K';
+console.log(`${'-'.repeat(50)}\nTESTING ${arrLabel}\n${'-'.repeat(50)}`);
  
 
 console.log(`\n${arrLabel} data`,
@@ -134,13 +134,17 @@ console.log(`\n${arrLabel} data`,
 // console.log(gen.arr10K);
 
 // Nested loop run time
-const targetToTest = 9_999_922; //  lowest: ~30 mid: ~500_000 highest: ~999_980
+const targetToTest = 99_900; //  lowest: ~30 mid: ~500_000 highest: ~999_980
 console.log(`targetToTest`, targetToTest);
-console.time('NL ${arrLabel}');
-// console.log(twoSumNL(arrToTest, targetToTest));
-console.timeEnd('NL ${arrLabel}');
+console.log(`${'-'.repeat(50)}\nTESTING ${arrLabel} Nested Loop Run Time\n${'-'.repeat(50)}`);
+
+console.time(`NL ${arrLabel}`);
+console.log(twoSumNL(arrToTest, targetToTest));
+console.timeEnd(`NL ${arrLabel}`);
 
 // Two pointer run time
-console.time('TP ${arrLabel}');
+console.log(`${'-'.repeat(50)}\nTESTING ${arrLabel} Two Pointer Runtime\n${'-'.repeat(50)}`);
+
+console.time(`TP ${arrLabel}`);
 console.log(twoSumTP(arrToTest, targetToTest));
-console.timeEnd('TP ${arrLabel}');
+console.timeEnd(`TP ${arrLabel}`);
