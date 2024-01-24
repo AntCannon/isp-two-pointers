@@ -16,7 +16,7 @@ function genSortedUniqueArr(len) {
 
 // arrays of various powers of 1*10^n
 // comment in/out respective arrays here and in the module exports at line 35
-console.log(`gen arrays start:`, start = Date.now());
+console.time('gen arrays');
   
 // const arr10 = genSortedUniqueArr(10);
 // const arr100 = genSortedUniqueArr(100);
@@ -27,8 +27,7 @@ const arr1M = genSortedUniqueArr(1_000_000);
 // const arr10M = genSortedUniqueArr(10_000_000);
 // const arr100M = genSortedUniqueArr(100_000_000);
   
-console.log(`gen arrays finish:`, finish = Date.now());
-console.log(`gen arrays runtime:`, finish - start);
+console.timeEnd('gen arrays');
 
 // export object of different sized arrays.
 

@@ -120,7 +120,7 @@ function twoSumTP(sArr, target) {
 // arr data
 
 const arrToTest = gen.arr1M;
-console.log(arrToTest);
+// console.log(arrToTest);
 const arrLabel = 'arr1M';
  
 
@@ -134,10 +134,10 @@ console.log(`\n${arrLabel} data`,
 // console.log(gen.arr10K);
 
 // Nested loop run time
-const targetToTest = 999_922; //  lowest: ~30 mid: ~500_000 highest: ~999_980
+const targetToTest = 9_999_922; //  lowest: ~30 mid: ~500_000 highest: ~999_980
 console.log(`targetToTest`, targetToTest);
 console.time('NL ${arrLabel}');
-console.log(twoSumNL(arrToTest, targetToTest));
+// console.log(twoSumNL(arrToTest, targetToTest));
 console.timeEnd('NL ${arrLabel}');
 
 // Two pointer run time
